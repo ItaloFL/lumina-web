@@ -1,8 +1,6 @@
-import { Login } from "./pages/login";
+import { RouterProvider } from "react-router";
+import { routes } from "./Router";
 
 export function App() {
-  return <div className="">
-    <Login />
-  </div>;
+  return <RouterProvider router={routes} />;
 }
-
