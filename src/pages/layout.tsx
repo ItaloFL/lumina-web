@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router-dom";
 import LuminaIcon from "../assets/lumina-icon.svg";
 
 export function Layout() {
@@ -23,18 +23,30 @@ export function Layout() {
       <div className="bg-[#000000] flex flex-col items-center justify-center">
         <Outlet />
 
-        <div className="absolute bottom-5 right-5 flex gap-2">
-          <Button className="cursor-pointer transition-colors hover:bg-[#27272A]">
+        <div className="absolute bottom-5 right-5 flex gap-4">
+          <Link
+            to="https://github.com/ItaloFL/lumina-web"
+            target="_blank"
+            className="flex items-center justify-center size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
+          >
             <FaGithub className="size-5" />
-          </Button>
+          </Link>
 
-          <Button className="cursor-pointer transition-colors hover:bg-[#27272A]">
+          <Link
+            to="https://www.linkedin.com/in/italo-ferreira-dev/"
+            target="_blank"
+            className="flex items-center justify-center size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
+          >
             <FaLinkedin className="size-5" />
-          </Button>
+          </Link>
 
-          <Button className="cursor-pointer transition-colors hover:bg-[#27272A]">
+          <Link
+            to="https://www.instagram.com/italonfl/"
+            target="_blank"
+            className="flex items-center justify-center size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
+          >
             <FaInstagram className="size-5" />
-          </Button>
+          </Link>
         </div>
       </div>
     </div>

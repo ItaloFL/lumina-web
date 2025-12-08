@@ -1,6 +1,15 @@
-import { RouterProvider } from "react-router";
+import { RouterProvider } from "react-router-dom";
 import { routes } from "./Router";
+import { ToastContainer } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
 
 export function App() {
-  return <RouterProvider router={routes} />;
+  return (
+    <>
+      <HelmetProvider>
+        <ToastContainer />
+        <RouterProvider router={routes} />
+      </HelmetProvider>
+    </>
+  );
 }
