@@ -11,6 +11,7 @@ import { useMutation } from "@tanstack/react-query";
 import { api } from "@/lib/axios";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
+import { env } from "@/env";
 
 const loginUserSchema = z.object({
   email: z
@@ -66,11 +67,11 @@ export function Login() {
   }
 
   async function loginWithGoogle() {
-    window.location.href = "http://localhost:3333/google";
+    window.location.href = `${env.VITE_BASEURL_API}google`;
   }
 
   async function loginWithGithub() {
-    window.location.href = "http://localhost:3333/github";
+    window.location.href = `${env.VITE_BASEURL_API}github`;
   }
 
   return (
