@@ -67,11 +67,11 @@ export function Login() {
   }
 
   async function loginWithGoogle() {
-    window.location.href = `${env.VITE_BASEURL_API}google`;
+    window.location.href = `${env.VITE_BASEURL_API}/google`;
   }
 
   async function loginWithGithub() {
-    window.location.href = `${env.VITE_BASEURL_API}github`;
+    window.location.href = `${env.VITE_BASEURL_API}/github`;
   }
 
   return (
