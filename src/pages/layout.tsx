@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import LuminaIcon from "../assets/lumina-icon.svg";
