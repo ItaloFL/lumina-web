@@ -57,7 +57,7 @@ export function Register() {
     }
   }
 
-  const { mutateAsync: createUser, isPending } = useMutation({
+  const { mutateAsync: createUser } = useMutation({
     mutationFn: async (formData: UserFormSchema) => {
       const data = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
