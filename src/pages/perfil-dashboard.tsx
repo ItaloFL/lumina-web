@@ -9,7 +9,6 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-
 import { DatePickerCalendar } from "@/components/date-pick-calendar";
 
 interface UserProfile {
@@ -22,7 +21,7 @@ interface UserProfile {
 export function ProfileDashboard() {
   const navigate = useNavigate();
 
-  const { data, isLoading, isError } = useQuery<UserProfile>({
+  const { data } = useQuery<UserProfile>({
     queryKey: ["profile"],
     queryFn: async () => {
       const { data } = await api.get("/profile");
@@ -43,7 +42,6 @@ export function ProfileDashboard() {
     },
   });
 
-  // Preenche valores
   useEffect(() => {
     if (data) {
       reset({
@@ -98,22 +96,6 @@ export function ProfileDashboard() {
       });
     },
   });
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-zinc-400">
-        Carregando perfil...
-      </div>
-    );
-  }
-
-  if (isError || !data) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-red-500">
-        Erro ao carregar perfil
-      </div>
-    );
-  }
 
   async function handleLogout() {
     await userLogout();
@@ -171,10 +153,14 @@ export function ProfileDashboard() {
                 />
               </div>
 
-              <h2 className="text-xl font-semibold text-white mt-4">
-                {data.name}
-              </h2>
-              <p className="text-sm text-zinc-400">{data.email}</p>
+              {data && (
+                <>
+                  <h2 className="text-xl font-semibold text-white mt-4">
+                    {data.name}
+                  </h2>
+                  <p className="text-sm text-zinc-400">{data.email}</p>
+                </>
+              )}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

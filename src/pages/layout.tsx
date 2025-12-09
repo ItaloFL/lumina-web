@@ -4,8 +4,8 @@ import LuminaIcon from "../assets/lumina-icon.svg";
 
 export function Layout() {
   return (
-    <div className="grid grid-cols-2 h-screen text-white">
-      <div className="bg-[#18181B] flex flex-col justify-between p-10">
+    <div className="grid grid-cols-1 h-screen text-white xl:grid-cols-2">
+      <div className="hidden bg-[#18181B] xl:flex flex-col justify-between p-10">
         <div className="flex gap-2">
           <span className="block size-9 bg-zinc-300 rounded-md">
             <img src={LuminaIcon} className="bg-[#18181B]" alt="" />

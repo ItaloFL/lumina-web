@@ -91,19 +91,21 @@ export function Register() {
   }
 
   return (
-    <>
+    <div className="max-w-4/5">
       <Helmet>
         <title>Lumina Stack | Cadastro</title>
       </Helmet>
 
-      <div className="flex gap-2 items-center mb-3">
-        <img src={LuminaIcon} className="bg-[#000000] size-8" alt="" />
-        <p className="font-semibold text-2xl">Lumina</p>
-      </div>
+      <div className="flex flex-col items-center">
+        <div className="flex gap-2 items-center mb-2">
+          <img src={LuminaIcon} className="bg-[#000000] size-8" alt="" />
+          <p className="font-semibold text-2xl">Lumina</p>
+        </div>
 
-      <span className="mb-1">
-        Digite suas informações abaixo para criar sua conta
-      </span>
+        <span className="mb-1 text-sm">
+          Digite suas informações abaixo para criar sua conta
+        </span>
+      </div>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -114,12 +116,12 @@ export function Register() {
         <div className="flex items-center gap-4">
           <div
             className="
-              w-20 h-20
+              w-16 h-16
               rounded-full
               bg-zinc-700/30
               overflow-hidden
               flex items-center justify-center
-              border-3 border-zinc-600 border-dashed
+              border-3 border-zinc-600 border-dashed xl:w-20 xl:h-20
             "
           >
             {preview ? (
@@ -156,7 +158,7 @@ export function Register() {
 
         <Label>Nome completo</Label>
         <Input
-          className="w-[500px] h-11 bg-[#18181B] text-white outline-none border border-zinc-700"
+          className="h-11 bg-[#18181B] text-white outline-none border border-zinc-700"
           placeholder="Digite seu nome completo"
           {...register("name")}
         />
@@ -166,7 +168,7 @@ export function Register() {
 
         <Label>Email</Label>
         <Input
-          className="w-[500px] h-11 bg-[#18181B] text-white outline-none border border-zinc-700"
+          className="h-11 bg-[#18181B] text-white outline-none border border-zinc-700"
           placeholder="Digite seu email"
           {...register("email")}
         />
@@ -176,7 +178,7 @@ export function Register() {
 
         <Label>Senha</Label>
         <Input
-          className="w-[500px] h-11 bg-[#18181B] text-white outline-none border border-zinc-700"
+          className="h-11 bg-[#18181B] text-white outline-none border border-zinc-700"
           placeholder="Digite sua senha"
           type="password"
           {...register("password")}
@@ -197,7 +199,10 @@ export function Register() {
           <p className="text-red-500 text-sm">{errors.dateOfBirth.message}</p>
         )}
 
-        <Button type="submit" className="mt-3 h-10 cursor-pointer">
+        <Button
+          type="submit"
+          className="mt-3 h-10 cursor-pointer bg-[#AF385D] hover:bg-[#912547]"
+        >
           Cadastrar
         </Button>
 
@@ -210,6 +215,6 @@ export function Register() {
           </Link>
         </div>
       </form>
-    </>
+    </div>
   );
 }

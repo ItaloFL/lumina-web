@@ -75,7 +75,7 @@ export function Login() {
   }
 
   return (
-    <>
+    <div className="max-w-4/5">
       <Helmet>
         <title>Lumina | Login</title>
         <meta
@@ -84,22 +84,34 @@ export function Login() {
         />
       </Helmet>
 
-      <div className="flex gap-2 items-center mb-3">
-        <img src={LuminaIcon} className="bg-[#000000] size-10" alt="" />
-        <p className="font-semibold text-4xl">Lumina</p>
+      <div className="flex flex-col items-center">
+        <div className="flex gap-2 items-center mb-3">
+          <img
+            src={LuminaIcon}
+            className="bg-[#000000] size-8 xl:size-10"
+            alt=""
+          />
+          <p className="font-semibold text-3xl xl:text-4xl">Lumina</p>
+        </div>
+        <span className="mb-2 text-base font-semibold xl:text-lg">
+          Digite seu email e senha para realizar o login
+        </span>
       </div>
-      <span className="mb-2 text-lg font-semibold">
-        Digite seu email e senha para realizar o login
-      </span>
 
-      <div className="flex flex-col gap-4 mt-3 w-[500px]">
-        <Button onClick={loginWithGithub} className="h-12 cursor-pointer text-md">
-          <FaGithub className="size-5"/>
+      <div className="flex flex-col gap-4 mt-3">
+        <Button
+          onClick={loginWithGithub}
+          className="h-10 xl:h-12 cursor-pointer text-md"
+        >
+          <FaGithub className="size-5" />
           Logue com o Github
         </Button>
 
-        <Button onClick={loginWithGoogle} className="h-12 cursor-pointer text-md">
-          <FaGoogle className="size-5"/>
+        <Button
+          onClick={loginWithGoogle}
+          className="h-10 xl:h-12 cursor-pointer text-md"
+        >
+          <FaGoogle className="size-5" />
           Logue com o Google
         </Button>
       </div>
@@ -108,9 +120,9 @@ export function Login() {
         onSubmit={handleSubmit(onSubmit)}
         className="mt-4 flex flex-col gap-3 "
       >
-        <Label className="uppercase">Email</Label>
+        <Label className="text-[12px] xl:text-sm uppercase">Email</Label>
         <Input
-          className="w-[500px] h-13 bg-[#18181B] outline-none border-none focus:border"
+          className="h-11 xl:h-12 bg-[#18181B] border-[#000000] transition-all focus:border-[#b24a6b]"
           placeholder="Digite seu email"
           {...register("email")}
         />
@@ -118,9 +130,9 @@ export function Login() {
           <p className="text-red-500 text-sm">{errors.email.message}</p>
         )}
 
-        <Label className="uppercase">Senha</Label>
+        <Label className="text-[12px] xl:text-sm uppercase">Senha</Label>
         <Input
-          className="w-[500px] h-13 bg-[#18181B] outline-none border-none focus:border"
+          className="h-11 xl:h-12 bg-[#18181B] border-[#000000] transition-all focus:border-[#b24a6b]"
           placeholder="Digite sua senha"
           type="password"
           {...register("password")}
@@ -129,25 +141,29 @@ export function Login() {
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}
 
-        <Button type="submit" className="mt-3 h-12 cursor-pointer text-base transition-colors bg-[#AF385D] hover:bg-[#912547]">
+        <Button
+          type="submit"
+          className="flex items-center mt-3 h-10 xl:h-12 cursor-pointer text-base transition-colors bg-[#AF385D] hover:bg-[#912547]"
+        >
           Login
         </Button>
+
         <div className="flex justify-between">
           <Link
             to="register"
-            className="transition-colors cursor-pointer hover:text-[#e6e5e5] "
+            className="transition-colors cursor-pointer text-[#AF385D] font-semibold text-sm hover:text-[#b24a6b]"
           >
             Criar uma conta
           </Link>
 
           <Link
             to="forgot-password"
-            className="transition-colors cursor-pointer hover:text-[#e6e5e5] "
+            className="transition-colors cursor-pointer text-[#AF385D] font-semibold text-sm hover:text-[#b24a6b]"
           >
             Esqueci minha senha
           </Link>
         </div>
       </form>
-    </>
+    </div>
   );
 }
