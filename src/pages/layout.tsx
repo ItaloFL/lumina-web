@@ -26,25 +26,25 @@ export function Layout() {
           <Link
             to="https://github.com/ItaloFL/lumina-web"
             target="_blank"
-            className="flex items-center justify-center size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
+            className="flex items-center justify-center size-8 xl:size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
           >
-            <FaGithub className="size-5" />
+            <FaGithub className="size-4 xl:size-5" />
           </Link>
 
           <Link
             to="https://www.linkedin.com/in/italo-ferreira-dev/"
             target="_blank"
-            className="flex items-center justify-center size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
+            className="flex items-center justify-center size-8 xl:size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
           >
-            <FaLinkedin className="size-5" />
+            <FaLinkedin className="size-4 xl:size-5" />
           </Link>
 
           <Link
             to="https://www.instagram.com/italonfl/"
             target="_blank"
-            className="flex items-center justify-center size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
+            className="flex items-center justify-center size-8 xl:size-11 rounded-md cursor-pointer transition-colors hover:bg-[#27272A]"
           >
-            <FaInstagram className="size-5" />
+            <FaInstagram className="size-4 xl:size-5" />
           </Link>
         </div>
       </div>
