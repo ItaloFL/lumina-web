@@ -84,22 +84,22 @@ export function Login() {
         />
       </Helmet>
 
-      <div className="flex gap-2 items-center mb-2">
-        <img src={LuminaIcon} className="bg-[#000000] size-8" alt="" />
-        <p className="font-semibold text-2xl">Lumina</p>
+      <div className="flex gap-2 items-center mb-3">
+        <img src={LuminaIcon} className="bg-[#000000] size-10" alt="" />
+        <p className="font-semibold text-4xl">Lumina</p>
       </div>
-      <span className="mb-1 ">
+      <span className="mb-2 text-lg font-semibold">
         Digite seu email e senha para realizar o login
       </span>
 
       <div className="flex flex-col gap-4 mt-3 w-[500px]">
-        <Button onClick={loginWithGithub} className="h-10 cursor-pointer">
-          <FaGithub />
+        <Button onClick={loginWithGithub} className="h-12 cursor-pointer text-md">
+          <FaGithub className="size-5"/>
           Logue com o Github
         </Button>
 
-        <Button onClick={loginWithGoogle} className="h-10 cursor-pointer">
-          <FaGoogle />
+        <Button onClick={loginWithGoogle} className="h-12 cursor-pointer text-md">
+          <FaGoogle className="size-5"/>
           Logue com o Google
         </Button>
       </div>
@@ -108,9 +108,9 @@ export function Login() {
         onSubmit={handleSubmit(onSubmit)}
         className="mt-4 flex flex-col gap-3 "
       >
-        <Label>Email</Label>
+        <Label className="uppercase">Email</Label>
         <Input
-          className="w-[500px] h-11 bg-[#18181B] outline-none border-none focus:border"
+          className="w-[500px] h-13 bg-[#18181B] outline-none border-none focus:border"
           placeholder="Digite seu email"
           {...register("email")}
         />
@@ -118,9 +118,9 @@ export function Login() {
           <p className="text-red-500 text-sm">{errors.email.message}</p>
         )}
 
-        <Label>Senha</Label>
+        <Label className="uppercase">Senha</Label>
         <Input
-          className="w-[500px] h-11 bg-[#18181B] outline-none border-none focus:border"
+          className="w-[500px] h-13 bg-[#18181B] outline-none border-none focus:border"
           placeholder="Digite sua senha"
           type="password"
           {...register("password")}
@@ -129,7 +129,7 @@ export function Login() {
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}
 
-        <Button type="submit" className="mt-3 h-10 cursor-pointer">
+        <Button type="submit" className="mt-3 h-12 cursor-pointer text-base transition-colors bg-[#AF385D] hover:bg-[#912547]">
           Login
         </Button>
         <div className="flex justify-between">
